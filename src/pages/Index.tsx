@@ -7,6 +7,7 @@ import Destinations from '@/components/Destinations';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import ChatWidget from '@/components/ChatWidget';
 
 const Index = () => {
   // Fade in animation for sections
@@ -25,6 +26,17 @@ const Index = () => {
       observer.observe(section);
     });
     
+    // Set theme based on localStorage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || 
+        (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+    
     return () => {
       fadeInSections.forEach(section => {
         observer.unobserve(section);
@@ -33,7 +45,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Header />
       <Hero />
       <Services />
@@ -41,6 +53,7 @@ const Index = () => {
       <Testimonials />
       <ContactSection />
       <Footer />
+      <ChatWidget />
     </div>
   );
 };

@@ -6,13 +6,13 @@ import { ArrowRight } from "lucide-react";
 const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16">
-      {/* Background Image */}
+      {/* Background Image - More appealing image for international students */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" 
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=2000&q=80')" }}
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80')" }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-overlay dark:bg-gradient-overlay-dark"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         </div>
         
         {/* Quick Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 bg-white/10 backdrop-blur-md p-6 rounded-lg animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 bg-white/10 backdrop-blur-md p-6 rounded-lg animate-fade-in dark:bg-gray-900/30" style={{ animationDelay: "0.6s" }}>
           <div className="text-center">
             <h3 className="text-3xl font-bold text-white">200+</h3>
             <p className="text-white/80">Universities</p>
